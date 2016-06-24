@@ -1,0 +1,2212 @@
+/*
+Theme Name: healthLinx
+Author: Steven Castillo
+Author URI: https://www.healthlinx.com
+Description: Custom theme for HealthLinx Executive Search
+Version: 1.0.0
+License: GNU General Public License, version 3 (GPLv3)
+License URI: https:////www.gnu.org/licenses/gpl-3.0.txt
+Tags: healthlinx, responsive design, custom theme
+Text Domain: healthlinx
+*/
+
+/** *****************************************
+
+	General Classes and Colors 
+
+		Orange: #FF9900;
+			Light Orange: rgba(254,215,171,0.6);
+		Gray: #727474;
+			Secondary, lighter gray: #D5D5D5;
+		Light Gray: #EAEAEA;
+		Mid Gray: #4e4e4e;
+		Dark Gray: #232323 or rgba(35,35,35,1.0);
+		
+***************************************** **/
+	.clear {clear: both;}
+	.lightOrange {color: #fed7ab;}
+	.orange {color: #FF9900 !important;}
+	.darkOrange {color: #b56328;}
+	.white {color: #fff !important;}
+	.grayBG {background-color: #eaeaea;}
+	.midGray {color: #797a7d !important;}
+		.midGrayBG {background-color: #797a7d !important;}
+	.darkGray {color: #232323;}
+		.darkGrayBG {background-color: #232323 !important;}
+	.orangeBG {background-color: #FF9900;}
+	.grayscale {
+		filter: grayscale(100%);
+			-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */	
+	}
+	.centerLogo {left: 40%; right: auto;}
+	.activeNav {color: #FF9900 !important;}
+	.boldFont {font-weight: bold;}
+	.italics {font-style: italic;}
+	.noMarginImportant {margin: 0 !important;}
+	.noBulletPoint {list-style-type: none;}
+	.opacityDrop {opacity: 0.6;}
+	.opacityFull {opacity: 1.0;}
+	.imgWidth80 {width: 80%;}
+	.centerText {
+		text-align: center;
+		display: block;
+	}
+	.whiteTextOrangeBG {
+		color: #fff;
+		background-color: #FF9900;
+		padding: 10px 0;
+		text-transform: capitalize;
+	}
+	.whiteTextGrayBG {background-color: #797a7d;}
+	:focus {outline-color: transparent; outline-style: none;}
+	:hover, .transition {
+		transition: 0.25s ease-in-out;
+			-webkit-transition: 0.25s ease-in-out;
+			-moz-transition: 0.25s ease-in-out;
+			-o-transition: 0.25s ease-in-out;
+		cursor: pointer;
+	}
+	a:hover {cursor: pointer;}
+	.widthRestriction {
+		position: relative;
+		display: block;
+		max-width: 1200px;	
+		margin: 30px auto;
+	}
+	.widthRestrictionOurTeam {
+		margin: 0 auto !important;
+		padding: 30px 0;	
+	}
+	img {
+		display: block;
+		margin: 0 auto;
+		max-width: 100%;
+	}
+	section {
+		/* margin: 30px 0 0 0; */
+	}
+	h2 {margin: 0;}
+	
+	/* Layout Dimensions */
+		.outerThirdWidth {
+			width: 99%;
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+		.fullWidth {width: 100%;}
+		.threeQuartersWidth {
+			display: inline-block;
+			vertical-align: top;
+			width: 75%;
+		}
+		.threeQuartersWidthSinglePost {
+			width: 62%;
+			padding: 0 1%;	
+		}
+		.twoThirdsWidth {
+			width: 68%;
+			display: inline-block;
+		}
+		.halfWidth {
+			display: inline-block;
+			vertical-align: top;
+			width: 49%;
+			margin: 0.5%%;
+		}
+		.halfWidthRevised {
+			width: 40%;
+			margin: 4.75%;	
+		}
+		.quarterWidth {
+			display: inline-block;
+			vertical-align: top;
+			width: 23%;	
+			margin: 1%;
+		}
+		.quarterWidthSearch {
+			margin: 0;
+			padding: 1%;	
+		}
+		.thirdWidth {
+			width: 31%;
+			margin: 1%;
+			display: inline-block;
+			vertical-align: top;
+		}
+		.sixthWidth {
+			display: inline-block;
+			vertical-align: top;
+			width: 14.5%;
+			margin: 1%;	
+		}
+	/* Layout Dimensions */
+	
+	.blogPostStyle {
+		width: 84%;	
+		margin: 30px auto;
+		background-color: #eaeaea;
+	}
+	.blogPageIndividualText {
+		padding: 3%;
+		font-size: 0.9em;	
+	}
+	.blogPageIndividualText h3 {
+		margin: 3px 0;
+		font-size: 0.9em;
+	}
+	.blogPageIndividualText h3 a:link, .blogPageIndividualText h3 a:visited, .cat-item a:link, .cat-item a:visited {
+		color: 	#797a7d;
+		text-decoration: none;
+	}
+	.blogPageIndividualText h3 a:hover, .cat-item a:hover {color: #FF9900;}
+	.quarterWidthSinglePost {margin: 1% 0 0 0;}
+	.singlePostInfo {
+		list-style-type: none;
+		text-transform: capitalize;	
+	}
+	.singlePostInfo a:link, .singlePostInfo a:visited {
+		display: block;
+		color: #797A7D;
+		text-decoration: none;
+		font-size: 0.8em;
+	}
+	.singlePostInfo a:hover {color: #FF9900;}
+	.singlePostInfo {
+		background-color: #eaeaea;
+		margin: 0 0 10px 0;
+		padding: 5% 5% 10%;
+		font-size: 0.85em;	
+	}
+	.careersPostUpload {display: block;}
+	.singlePostInfo > h5 {margin: 10px 0 5px 0;}
+	.singlePostAuthorTime {text-transform: capitalize;}
+	.singlePostAuthor, .singlePostTime {display: block;}
+	.singlePostAuthor {
+		font-weight: bold;
+		font-weight: 1em;
+	}
+	.quarterWidthSinglePost > .socialIconDiv  {
+		margin: 0 auto;
+		text-align: center;	
+	}
+	.quarterWidthSinglePost > .socialIconDiv > img {margin: 0;}
+	.resourcesQuarterWidth > img {margin: 5px 15px 5px 17%;}
+	table tr td input[type=button] {
+		background-color: #FF9900;
+		color: #ffffff;
+		border: none;
+		font-weight: bold;
+		padding: 15px 0;
+	}
+	table tr td input[type=button]:hover, .hideSidebar:hover {
+		background-color: #232323;
+		transition: 0.25s ease-in-out;
+			-webkit-transition: 0.25s ease-in-out;
+			-moz-transition: 0.25s ease-in-out;
+			-o-transition: 0.25s ease-in-out;
+	}
+	
+/** *****************************************
+Foundational Structure
+***************************************** **/
+	html {
+		overflow-x: hidden;
+		overflow-y: scroll;
+		font-family: Century Gothic, CenturyGothic, Helvetica, Arial, sans-serif;
+		width: 100%;
+		max-width: 100%;
+	}
+	/* Overrides margin added by WP */
+	.html {margin: 0 !important;}
+	body {
+		overflow-x: hidden;
+		position: relative;
+		width: 100%;
+		margin: 0 auto !important;
+	}
+	.colorOverlay {
+		display: none;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(35,35,35,0.6);
+		z-index: 99999;
+	}
+	header {padding: 30px 0;}
+	header, section#mainContent, footer {
+		display: block;
+		width: 100%;
+		margin: 0 auto;
+	}
+	.allContent {
+		display: block;
+	}
+	section > p {
+		width: 60%;
+		max-width: 745px;
+		margin: 15px auto;	
+	}
+	h1 {
+		text-align: center;
+		display: block;
+		font-size: 2.0em;
+		font-weight: normal;
+		padding: 25px 0;
+		margin: 0;
+	}
+	p {
+		margin: 15px 0;
+		line-height: 1.5em;
+	}
+	p img {
+		margin: 5% auto 2%;
+		max-width: 100%;
+		display: inline-block;
+	}
+	img.pChart {
+		display: inline-block;
+		width: 100%;
+	}
+	.pWidthSmaller {
+		margin: 10px auto;
+		width: 80%;
+	}
+	.outerBlog {
+		background-color: #eaeaea;
+		max-width: none;
+		background: url("http://solutions.healthlinx.com/cdnr/34/acton/attachment/4436/f-01ed/1/-/-/-/-/Glass_%20Pen_%20and%20Paper%20Background.jpg");
+		background-size: auto 100%;
+		padding: 20px 0;
+	}
+	.blogText {
+		padding: 1% 4%;
+		background-color: rgba(255,255,255,0.8);
+		width: 92%;
+	}
+	.blogContent {
+		display: inline-block;
+		vertical-align: top;
+		width: 75%;
+		margin: 0 1%;
+	}
+	.blogContent > img, .blogContent > .whiteTextOrangeBG {
+		width: 100%;
+		margin: 0 auto;
+	}
+	.blogContent p:first-child {margin: 0 0 15px 0;}
+	.sidebarWrapper {
+		vertical-align: top;	
+		display: inline-block;
+		max-width: 240px;
+		width: 21%;
+		padding: 1%;
+	}
+	.sidebarWrapper > .search-form {margin: 10px 0;}
+	.sidebarWrapper h3 {
+		font-size: 1em;
+		margin: 10px 0;
+		color: #FF9900;
+	}
+	.sidebarWrapper p {font-size: 0.8em;}
+	.sidebarDivider {
+		width: 95%;
+		border-bottom: 1px solid #eaeaea;
+		margin: 15px auto;
+	}
+	.sidebarMobileTab {display: none;}
+	.hideSidebar {
+		display: none;
+		border: none;
+		padding: 3% 0;
+		margin: 2% 0;
+		width: 100%;
+		background-color: #eaeaea;
+		color: #a7a7a7;
+		font-weight: bold;
+	}
+	.searchBar {width: 80%;}
+	.searchButton {
+		border: none;
+		background: none;
+		vertical-align: middle;	
+		width: 20%;
+	}
+	.searchButton img {
+		width: 20px;
+		height: 20px;	
+	}
+	.size-post-thumbnail {
+		max-width: 100%;
+		height: auto;	
+	}
+	.postThumbnailWrapper {max-height: 242px;}
+	.cat-item {
+		text-transform: capitalize;
+		font-size: 0.8em;
+		list-style-type:disc;
+		line-height: 1.5em;
+	}
+	/* Hide certain category titles */
+	.cat-item-1, .cat-item-4 {display: none;}
+/** *****************************************
+Navigation
+***************************************** **/
+	#mNav {display: none;}
+	nav {
+		position: fixed;
+		width: 100%;
+		background-color: #fff;
+		box-shadow: 0px 3px 5px -5px #a1a1a1;
+			-webkit-box-shadow: 0px 3px 5px -5px #a1a1a1;
+			-moz-box-shadow: 0px 3px 5px -5px #a1a1a1;
+		z-index: 99999;
+	}
+	.innerNav {
+		margin: 0 auto;	
+		width: 100%;
+		max-width: 1200px;
+	}
+	/* WP-created class */
+	.menu-navigation-container {
+		float: left;
+		clear: none;
+		width: 80%;
+		margin-top: 7px;
+		font-size: 0.9em;
+	}
+	#menu-navigation {padding: 0;}
+	#menu-navigation li {border-bottom: solid 2px #fff;}
+	.navImage {
+		float: left;
+		clear: none;
+		height: auto;
+		width: 12%;
+		min-width: 65px;
+		padding: 0 0 0 4%;
+	}
+	.navImage {cursor: pointer;}
+	/* nav ul, located inside nav wrapper */
+	.menu {
+		display: inline;
+	}
+	.menu-item {
+		list-style-type: none;
+		display: inline-block;
+		text-align: center;
+		max-width: 10ch;
+		padding: 1% 2%;
+	}
+	.menu-item a:link, .menu-item a:visited {
+		text-decoration: none;
+		color: #727474;
+	}
+	.mobileSubMenu li a {
+		background-color: #fff;
+		color: #727474;
+		text-align: center;
+	}
+	.sub-menu > li a:link, .sub-menu > li a:visited {color: #fff;}
+	.sub-menu > li a:hover {color: #232323 !important;}
+	.menu-item > a:hover, .footerFirstColumn ul li a:hover, .footerSecondColumn ul li a:hover {color: #FF9900 !important;}
+	#menu-sidebar-menu {
+		margin: 0;
+		padding: 0;	
+	}
+	#menu-sidebar-menu li {
+		display: block;
+		text-align: left;
+	}
+	/* Hiding child pages */
+	#menu-navigation li .sub-menu {
+		display: none;
+		position: absolute;
+		padding: 0;
+		z-index: 3;
+		background-color: #f90;
+		margin: 0.75% 0 0 0;
+	}
+	#menu-navigation li .sub-menu li {
+		display: block;	
+		padding: 8%;
+		margin: 5% 10%;
+		max-width: 100%;
+	}
+	/* Job Seekers Login, Team Member Window */
+	.jobSeekersLogin {
+		position: absolute;
+		margin-top: 4.25%;
+		right: 0;
+		display: block;
+	}
+	.jobSeekersLoginHidden {display: none;}
+	/*.jobSeekersLogin p*/
+	.jobSeekersLogin p a:link, .jobSeekersLogin p a:visited {
+		text-decoration: none;
+		text-transform: uppercase;
+		display: block;
+		padding: 10px 15px;
+		background-color: #a7a7a7;
+		color: #fff;
+		font-size: 0.65em;
+		letter-spacing: 0.01em;
+		line-height: 1.0em;
+		margin: -40px 0 0 0;
+	}
+	.jobSeekersLogin p:hover, .jobSeekersLogin p a:hover {
+		background-color: #232323;
+		transition: 0.25s ease-in-out;
+			-webkit-transition: 0.25s ease-in-out;
+			-moz-transition: 0.25s ease-in-out;
+			-o-transition: 0.25s ease-in-out;
+		cursor: pointer;
+	}
+	.jsLoginWindow {
+		display: none;
+		position: fixed;
+		margin: 0 auto;
+		z-index: 10000;
+		background-color: #fff;
+		padding: 10px;
+		right: 0;
+		left: 0;
+		top: 15%;
+		border: 2px solid #eaeaea;
+		width: 50%;
+	}
+	.jsLoginWindow input {
+		border: 1px solid #eaeaea;
+		padding: 10px 5px;
+		margin: 5px 0;
+		width: 100%;
+	}
+	.jsLoginWindow p {
+		text-align: center;
+		margin: 5px 0;
+	}
+	.jsLoginWindow h5 {
+		text-align: center;
+		color: #a7a7a7;
+		font-size: 0.7em;
+	}
+	.jsLoginWindow a:link, .jsLoginWindow a:visited {color: #232323;}
+	button[name=login] {
+		background-color: #FF9900;
+		font-weight: bold;
+		color: #fff;
+		border: none;
+		width: 100%;
+		padding: 10px 0;
+		margin: 5px 0;
+	}
+	button[name=login]:hover {background-color: #232323;}
+	button[name=hide] {
+		border: none;
+		background-color: rgba(0,0,0,0.1);
+		width: 100%;
+		padding: 5px 0;
+		margin: 5px 0;
+	}
+	
+/** *****************************************
+Header
+***************************************** **/
+	.insideHeaderDiv {
+		position: relative;
+		display: block;
+		width: 95%;
+		margin: 0 auto;
+		color: #232323;
+	}
+	.insideHeaderDiv h1, .insideHeaderDiv h3 {margin: 0;}
+	.insideHeaderDiv h1 {
+		font-weight: normal;
+		text-align: left;
+		color: #FF9900;	
+		padding: 0;
+	}
+	.insideHeaderDiv p {
+		margin: 15px 0;
+		width: 80%;
+	}
+	.ourTeamHeaderUL {display: block;}
+	.ourTeamHeaderUL li {list-style-type: none;}
+	.ourTeamHeaderUL li a:link, .ourTeamHeaderUL li a:visited {
+		display: block;
+		text-decoration: underline;
+		font-weight: bold;
+		color: #FF9900;	
+		padding: 5px 0;
+	}
+	.ourTeamHeaderUL li a:hover {
+		color: #232323;
+		text-decoration: none;	
+	}
+	
+/** *****************************************
+Main Content
+***************************************** **/
+	/** *********** Our Services ************** **/
+	.innerServices {width: 100%;}
+	.arrow-down {
+		position: absolute;
+		width: 0; 
+		height: 0; 
+		border-left: 40px solid transparent;
+		border-right: 40px solid transparent;
+		border-top: 40px solid #fff;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+	}
+	.arrow-down-orange {border-top: 40px solid #FF9900;}
+	.arrow-down-gray {border-top: 40px solid #797a7d;}
+	.LEservices, .NEservices {
+		display: inline-block;
+		vertical-align: top;
+		min-height: 495px;
+	}
+	.LEservices {
+		background-color: #FF9900;	
+		width: 50%;
+	}
+	.NEservices {
+		background-color: #a7a7a7;	
+		width: 50%;
+	}
+	.LEhomeContent, .NEhomeContent {
+		display: inline-block;
+		vertical-align: top;
+		color: #fff;
+		width: 80%;
+		max-width: 400px;
+		margin: 20px 10% 0;
+	}
+	.mServiceButton {display: none !important;}
+	.buttons > .LEhomeContent , .buttons > .NEhomeContent {margin: 0 10% 0;}
+	.LEhomeContent {
+		float: right;
+		background: url("https://www.healthlinx.com/wp-content/themes/healthlinx/images/leBG.png");
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+	}
+	.NEhomeContent {
+		float: left;
+		background: url("http://solutions.healthlinx.com/cdnr/34/acton/attachment/4436/f-0202/1/-/-/-/-/Thumbs%20Up%20Background.png");
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+	}
+	.LEhomeContent h3, .NEhomeContent h3 {text-align: center;}
+	.NEhomeContent h3 {
+		display: block;
+		width: 61%;
+		margin: 5% auto;
+	}
+	.LEhomeContent a:link, .LEhomeContent a:visited, .NEhomeContent a:link, .NEhomeContent a:visited, .buttons > a:link, .buttons > a:visited {
+		display: block;
+		text-decoration: none;
+		text-align: center;
+		font-weight: bold;
+		margin: 0 auto;
+		width: 50%;
+		border: 0;
+		color: #ff9900;
+		background-color: #fff;
+		font-size: 1em;
+		padding: 2%;	
+	}
+	.buttons {
+		display: inline-block;
+		width: 50%;
+		padding: 0 0 3% 0;
+	}
+	.buttons > a:link, .buttons > a:visited {
+		width: 25%;	
+		display: block;
+		text-decoration: none;
+		text-align: center;
+		font-weight: bold;
+		margin: 0 auto;
+		border: 0;
+		color: #ff9900;
+		background-color: #fff;
+		font-size: 1em;
+		padding: 2%;	
+	}
+	.LEbutton {background-color: #F90;}
+	.NEbutton {background-color: #A7A7A7;}
+	.LEhomeContent a:hover , .NEhomeContent a:hover, .buttons > a:hover {
+		background-color: #232323;
+		color: #fff;
+	}
+	.NEhomeContent button {color: #a7a7a7;}
+	.LEhomeContent span {
+		text-align: center;
+		display: block;
+		font-size: 3.5em;
+		line-height: 1em;
+		font-weight: bold;
+		color: #bddb8b;
+		margin: 12% 0 5%;
+	}
+	.NEhomeContent span {
+		text-align: center;
+		display: block;
+		color: #fff;
+		font-weight: bold;
+		font-size: 3.5em;
+	}
+	/** *********** Blog Posts ************** **/
+	/* Hides 'Post' category on individual post page */
+	.post-categories li a[href="http://www.healthlinx.com/category/post/"] {display: none;}
+	.blogPost h3 {margin: 0;}
+	.blogTitle a:link, .blogTitle a:visited {
+		text-decoration: none;
+		display: inline-block;
+		margin: 0.5em 0 0.15em 0;
+		font-size: 1em;
+		color: #a7a7a7;
+	}
+	.blogpost h3 a:hover {color: #f90;}
+	.postDate, .postAuthor, .excerpt {
+		font-size: 0.8em;
+		margin: 0 0 5px;
+		color: #232323;
+	}
+	.postAuthor {text-transform: capitalize;}
+	.excerpt {
+		font-weight: normal;
+		font-size: 0.9em;	
+		line-height: 1.5em;
+	}
+	.excerpt > a:link, .excerpt > a:visited {
+		text-decoration: none;	
+		text-align: center;
+		color: #fff;
+		background-color: rgba(255,153,0,0.4);
+		font-size: 0.8em;
+		padding: 5px 0;
+		display: block;
+		width: 100%;
+	}
+	.excerpt > a:hover {
+		color: #fff;
+		background-color: rgba(255,153,0,1.0);
+	}
+	h5 {margin: 0;}
+	.readMore {
+		text-decoration: none;
+		font-weight: bold;
+		margin: 15px 4.25% 15px 0;
+		background-color: #FF9900;
+		float: right;
+		border: none;
+		font-size: 1.25em;
+		padding: 1%;
+		color: #ffffff;
+		letter-spacing: 0.05em;
+	}
+	.readMore:hover {
+		transition: 0.5s ease-in-out;
+			-webkit-transition: 0.5s ease-in-out;
+			-moz-transition: 0.5s ease-in-out;
+			-o-transition: 0.5s ease-in-out;
+		background-color: #232323;
+	}
+	.outerBlog h1 {
+		text-align: left;
+		width: 90%;
+		margin: 0 auto;
+		max-width: 1200px;
+		color: #232323;	
+		padding: 2% 6%;
+		font-size: 2em;
+		font-weight: normal;
+	}
+	.blogPageButton {
+		display: inline-block;
+		width: 50%;
+	}
+	.blogPageButton a:link, .blogPageButton a:visited {
+		text-decoration: none;
+		font-weight: bold;
+		text-align: center;
+		display: inline-block;
+		font-size: 0.85em;
+		border: 2px solid #eaeaea;	
+		color: #797a7d;
+		padding: 1%;
+		margin: 0 1%;
+		width: 96%;
+	}
+	.blogPageButton a:hover {
+		color: #fff;
+		background-color: #232323;	
+		transition: 0.25s ease-in-out;
+			-webkit-transition: 0.25s ease-in-out;
+			-moz-transition: 0.25s ease-in-out;
+			-o-transition: 0.25s ease-in-out;
+	}
+	
+	/** *********** Testimonials ************** **/
+	.testimonial {text-align: center;}
+	.testimonial img {
+		width: 100px;
+		height: auto;
+		margin: 0 auto;
+		display: block;
+		border-radius: 50%;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+		border: 3px solid #a7a7a7;
+	}
+	/* Testimonial: quote */
+	.testimonial p:nth-child(2) {
+		font-weight: bold;
+		color: #232323;
+	}
+	/* Testimonial: person name */
+	.testimonial p:nth-child(3) {
+		color: #FF9900;
+		margin: 10px 0 0 0;
+	}
+	/* Testimonial: hospital name */
+	.testimonial p:nth-child(4) a:link, .testimonial p:nth-child(4) a:visited {
+		color: #797a7d;
+		font-style: italic;
+		margin: 0 0 10px 0;
+		font-size: 0.85em;
+	}
+	/** *********** Client Logos ************** **/
+	.clientLogoWrapper {
+		display: inline-block;
+		width: 80%;
+		margin: 4% auto;
+	}
+	.clientLogo {
+		display: inline-block;
+		width: 22%;
+		margin: 1%;
+		vertical-align: middle;
+	}
+	.clientLogo img {
+		max-height: 75px;
+		width: auto;
+		margin: 0 auto;	
+	}
+	.clientArrow {
+		width: 9%;
+		display: inline-block;	
+	}
+	/*Logo carousel*/
+	#clients {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#clients .clients-wrap {
+		display: block;
+		width: 95%;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	#clients .clients-wrap ul {
+		display: block;
+		list-style: none;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#clients .clients-wrap ul li {
+	  display: block;
+	  text-align: center;
+	  float: left;
+	  position: relative;
+	  width: 200px;
+	  height: 100px;
+	  line-height: 100px;
+	  margin: 10px;
+	}
+	#clients .clients-wrap ul li img {
+	  vertical-align: middle;
+	  display: inline-block;
+	  max-width: 100%;
+	  max-height: 100%;
+	  -webkit-transition: 0 linear left;
+	  -moz-transition: 0 linear left;
+	  transition: 0 linear left;
+	  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+	  filter: alpha(opacity=65); 
+	  opacity: 0.65;
+	}
+	#clients .clients-wrap ul li img:hover {
+	  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	  filter: alpha(opacity=100); 
+	  opacity: 1.0;
+	}
+	
+/** *****************************************
+Content
+***************************************** **/
+	/* Showing post author */
+		.single-author .entry-meta .by-author {display: inline;}
+	/* Leadership Excellence page */
+		.comparisonTableWrapper {background-color: #fed7ab;}
+		.leComparisonTable {
+			width: 100%;
+			max-height: 450px;
+			margin: 2% auto 4%;
+			padding: 35px 20px;
+		}
+		.leComparisonTable tr td {
+			text-align: center;
+			width: 24%;
+			padding: 1%;
+		}
+		.leComparisonTable tr td.titles {width: 10%;}
+		.leComparisonTable tr:first-child td {padding: 5px 0;}
+		.leComparisonTable tr:first-child td h1 {padding: 0;}
+		.leComparisonTable tr td:first-child {text-align: left;}
+		.sideBySideCell {
+			padding: 0 !important;
+			width: 50%;	
+		}
+		.ao_tbl_container tbody, .ao_tbl_container tbody tr, .ao_tbl_container tbody tr td {max-width: 100%}
+		select {max-width: 100%;}
+		form div table {width: 100%;}
+		form div table tr td label {padding: 5px 0;}
+		form div table tr td input, select {
+			width: 98%;
+			margin: 5px 0;	
+			padding: 5px 1%;
+		}
+		
+	/* JS Secured Login */
+		#siteloklogin {width: 100%;}
+		#siteloklogin .loginbox {
+			width: 94%;
+			max-width: 630px;
+			height: auto;
+			margin: 0 auto;
+			padding: 3%;
+			color: #232323;
+			text-align: center;
+		}
+		h1.loginbox {color: #232323 !important;}
+		input.loginbox {
+			width: 25%;
+			height: auto;
+			padding: 1%;
+			margin: 0;
+			border: none;
+			background-color: #eaeaea !important;
+		}
+		.loginbox label {
+			color: #232323;
+			vertical-align: middle;
+			width: auto;
+			padding: 0;
+			font-size: 1.5em;
+		}
+		div.extraoptions {margin: 15px 0 !important;}
+		.loginbutton {margin: 0 auto !important;}
+		p.message {
+			padding: 3% !important;
+			background-color: yellow;
+		}
+		.loginbutton #submit {
+			width: 	80% !important;
+			height: auto !important;
+			padding: 2% !important;
+			background-color: #FF9900;
+			color: #fff;
+			border: none;
+			font-weight: bold;
+		}
+		.loginbutton #submit:hover {background-color: #232323;}
+	/* Registration page */
+		table.registerTable tr:nth-child(even) {background-color: #eaeaea;}
+		table.registerTable tr:nth-child(odd) {background-color: #ffffff;}
+	
+	/* Resources page */
+		.outerContent {
+			padding: 10px 0;	
+			margin: 0 auto;
+		}
+		.outerContent > div > div > img, .outerContent > div > div > h4 {
+			display: block;	
+			vertical-align: middle;
+			text-align: center;
+		}
+		.outerContent > div > div > img {
+			width: 40px;
+			height: auto;
+			margin: 0 auto;
+		}
+		.resourcesPost {
+			background-color: #eaeaea;
+			padding: 2% 1% 0;
+			width: 28%;
+		}
+		.resourcesPost div img {
+			display: block;
+			width: 30px;
+			height: auto;
+			margin: 0 auto;
+			
+		}
+		.resourcesTitle a:link, .resourcesTitle a:visited, .resourcesAuthor, .resourcesDate {
+			display: block;	
+			font-size: 0.8em;	
+			line-height: 1.15em;
+			text-decoration: none;
+		}
+		.resourcesTitle a:link, .resourcesTitle a:visited {
+			color: #FF9900;
+			font-weight: bold;
+		}
+		.resourcesTitle a:hover {color: #232323;}
+		.resourcesAuthor, .resourcesDate {color: #797a7d;}
+		.resourcesDate {
+			padding: 1%;
+			font-size: 0.7em;
+		}
+		.resourcesAuthor {
+			font-weight: bold;
+			text-transform: capitalize;
+			padding: 3% 1% 1%;
+			font-size: 0.75em;
+			letter-spacing: 0.05em;
+		}
+		.resourcesTextWrapper, .resourcesImgWrapper {
+			display: inline-block;	
+		}
+		.resourcesTextWrapper {
+			vertical-align: middle;
+			width: 80%;
+			padding: 1% 0 0 0;
+		}
+		.resourcesTextWrapper > .excerpt {
+			padding: 4% 0;
+			font-size: 0.75em;
+		}
+		.resourcesImgWrapper {
+			vertical-align: top;
+			width: 20%;	
+		}
+		.viewMoreButton {
+			display: block;
+			vertical-align: top;
+			border: none;
+			text-decoration: none;
+			text-align: center;
+			font-weight: bold;
+			font-size: 0.9em;
+			width: 120px;
+			margin: 0 auto;
+			padding: 2px;
+		}
+		.viewMoreButton:hover, input[type="submit"]:hover {
+			background-color: #232323;
+			color: #fff;
+			transition: 0.25s ease-in-out;
+				-webkit-transition: 0.25s ease-in-out;
+				-moz-transition: 0.25s ease-in-out;
+				-o-transition: 0.25s ease-in-out;
+		}
+		.viewMoreButtonOrange {
+			color: #fff;
+			background-color: #FF9900;
+		}
+		.viewMoreButtonWhite {
+			color: #FF9900;
+			background-color: #fff;	
+		}
+		.resourcesContactWrapper {
+			background: url("https://www.healthlinx.com/wp-content/themes/healthlinx/images/glassesPenPaperBG.jpg");
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+		.resourcesContactWrapper > div {margin: 0;}
+		.resourcesContactWrapper > div > div {
+			width: 45%;
+			padding: 0 2%;	
+		}
+		textarea, .resourcesContactWrapper > div > div > div > form > div > table > tbody > tr > td > div > div > div > textarea {width: 100%;}
+		.resourcesContactWrapper div div p {width: 60%;}
+		.resourcesContactWrapper div div .viewMoreButton {margin: 0;}
+		.contactForm > form > input {
+			display: inline-block;
+			border: 1px solid #a7a7a7;
+			width: 47%;
+			margin: 1%;
+			padding: 1%;	
+		}
+		.contactForm form textarea[class=fullWidthInput] {
+			width: 96%;
+			margin: 1%;
+			padding: 1%;
+		}
+		input[type=submit], input[type=button] {
+			border: none;
+			font-weight: bold;
+			display: block;
+			width: 120px !important;
+			color: #fff;
+			background-color: #FF9900;
+			float: right;
+		}
+		input[type=button]:hover {
+			background-color: #232323;
+		}
+		.jobPostInfo > form > input[type=submit] {
+			float: none;	
+			width: 90% !important;
+			margin: 5px 0;
+			padding: 5px 0;
+		}
+		
+	/* Leaderhip Excellence */
+		.LEchartTitles  {
+			color: #fff;
+			font-weight: bold;
+			font-size: 0.85em;	
+		}
+		.LEchartOffered {background-color: #BDDB8B;}
+		.LEchartNotOffered {background-color: #797a7d;}
+		.LEtitles {
+			font-weight: bold;
+			color: #F90;
+			background-color: #fff;
+		}
+		.LEchartOfferedBG{background-color: #BDDB8B;}
+		.LEchartOffered {
+			background: url("http://solutions.healthlinx.com/cdnr/34/acton/attachment/4436/f-01d8/1/-/-/-/-/Check%20Icon.jpg");
+			background-size: 20px auto;
+			background-color: #BDDB8B;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+		.LEchartNotOfferedBG {background-color: #797a7d;}
+		.LEchartNotOffered {
+			background: url("http://solutions.healthlinx.com/cdnr/34/acton/attachment/4436/f-01d9/1/-/-/-/-/X%20Icon.jpg");
+			background-size: 20px auto;
+			background-color: #797a7d;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+		.LEavgVacancy {
+			background: url("http://solutions.healthlinx.com/cdnr/34/acton/attachment/4436/f-01d5/1/-/-/-/-/Average%20Vacancy%20BG.png");
+			background-size: 60% auto;
+			background-repeat: no-repeat;
+			background-position: center center;
+			padding: 1% 0;
+		}
+		.LEcontactUs {background-color: #eaeaea;}
+		.LEcontactUs > div > img {
+			display: block;
+			float: right;
+			height: 82%;
+				max-height: 952px;
+			width: 100%;
+				max-width: 150%;	
+		}
+		.LEcontactText {
+			text-align: left;
+			display: block;
+			width: 60%;
+			margin: 2% auto;		
+		}
+		.LEcontactText h1, .LEcontactText h3 {
+			text-align: left;
+			margin: 0;
+			padding: 0;
+		}
+		.LEcontactText > form {margin: 25px 0;}
+		.arrowWrapper {
+			display: inline-block; vertical-align: top; width: 38%; overflow: hidden;\
+			position: relative;
+			height: 75%;
+		}
+		.NEcontactUs > .arrowWrapper {height: 82%;}
+		.arrowWrapper img {
+			float: right;
+			display: block;
+			width: auto;
+			height: 100%;
+			max-height: 150%;
+			max-width: 170%;
+		}
+		.NEcontactUs > .arrowWrapper > img {
+			max-width: 190%;
+			height: 100%;	
+		}
+		.contactFormWrapper {
+			display: inline-block;
+			vertical-align: top;
+			width: 60%;
+		}
+		label, .formFieldLabel {font-size: 14px;}
+		.lePageServices {
+			width: 95%;
+			margin: 50px auto;	
+		}
+		.lePageServices > .quarterWidth {
+			background-color: #eaeaea;	
+			width: 21%;
+			height: 33%;
+			padding: 0 1%;
+		}
+		.lePageServices > .quarterWidth > a.readMore {
+			font-size: 	0.9em;
+			padding: 5px 10px;
+		}
+		.lePageServices > .quarterWidth > div {margin: 15px 0;}
+		.lePageServices > .quarterWidth div h3 {margin: 0;}
+		.lePageServices > .quarterWidth div h3 a:link, .lePageServices > .quarterWidth div h3 a:visited {
+			text-decoration: none;
+			color: #f90;
+			font-size: 	0.65em;
+		}
+		.lePageServices > .quarterWidth div h5.postAuthor, .lePageServices > .quarterWidth div h6.postDate {
+			margin: 0;
+			padding: 0;
+			font-weight: normal;
+			font-size: 0.7em;
+			color: #797a7d;
+		}
+		.lePageServices > .quarterWidth div h5.postAuthor {font-weight: bold;}
+		.lePageServices > .quarterWidth div h3 a:hover {color: #232323;}
+		.lePageServices > h2 {font-weight: normal;}
+		.lePageServices > h2, .lePageServices > h4 {
+			text-align: left;
+			padding: 0;
+			margin: 5px auto;
+			width: 98%;
+		}
+		.lePageServices > .quarterWidth > div > div > img {
+			display: inline-block;
+			vertical-align: top;
+			width: 20%;
+			max-width: 30px;
+			height: auto;	
+		}
+		.individualPost {margin: 10px 0;}
+		.lePageBlogPostText {
+			display: inline-block;
+			vertical-align: top;
+			width: 70%;
+			padding: 0 4%;
+		}
+		.leSolutionsWrapper {margin: 65px auto 0;}
+		.leSolutionsWrapper > .thirdWidth > img {
+			width: 95px;
+			height: auto;
+			margin: 0 auto;
+		}
+		.leSolutionsWrapper > .thirdWidth > h4, .leSolutionsWrapper > .thirdWidth > p {
+			text-align: center;	
+		}
+	/* Nursing Excellence */
+		.allContent > .widthRestriction > .halfWidthRevised > h2 {
+			text-align: center;	
+			font-weight: normal;
+		}
+		.neUL {
+			font-size: 0.85em;
+			margin: 0;
+			padding: 0;
+		}
+		.neUL li {margin: 10px 0;}
+		.halfWidth .noMargin > p > img {
+			width: 50%;	
+			margin: 0 auto;
+			display: block;
+		}
+		.halfWidth .noMargin > p {font-size: 0.85em;}
+		.halfWidth .noMargin > p.percent {font-size: 1.5em;}
+		.p2eIcon {
+			width: 25%;
+			min-width: 30px;
+			max-width: 50px;
+			height: auto;
+			margin: 0 auto;	
+		}
+		.iconCaption {
+			text-align: center;	
+			margin: 0 auto;
+			font-size: 0.75em !important;
+			width: 60%;
+		}
+		.neButtons {
+			display: block;
+			float: none;
+			text-align: center;
+			width: 80%;
+			max-width: 160px;
+			margin: 0 auto 15px;
+		}
+		.NElearnMoreButtons {margin: 0 auto 25px;}
+		.neMobileButtons {display: none;}
+		
+		/* Magnet */
+			.magnetP2Eheader img {
+				vertical-align: top;
+				max-width: 150px;
+				width: 90%;	
+			}
+			.magnetP2Eheader h1 {
+				color: #232323;
+				padding: 0;	
+			}
+			.magP2EbelowHeader > .quarterWidth {
+				width: 21%;
+				padding: 1%;
+				color: #fff;
+				background-color: #232323;
+				text-align: center;
+				vertical-align: middle;
+			}
+			.magP2EbelowHeader > .quarterWidth > h2 {
+				font-weight: normal;
+				font-size: 2.25em;
+				padding: 0;
+				margin: 6% 0 0 0;
+			}
+			.magP2EbelowHeader span {
+				margin: 0 auto;
+				padding: 0;
+			}
+			.magP2EbelowHeader > .threeQuartersWidth {
+				text-align: center;
+				vertical-align: middle;
+				font-size: 0.85em;
+				color: #a7a7a7;
+			}
+			.magP2EbelowHeader > .threeQuartersWidth > .thirdWidth {
+				width: 32%;
+				margin: 0;
+				vertical-align: middle;
+			}
+			.servicesBenefitsTeam {
+				background-color: #232323;	
+				color: #fff;
+				padding: 30px 0;
+			}
+			.servicesBenefitsTeamGray {
+				background-color: #eaeaea;
+				color: #232323;
+				padding: 30px 0;
+			}
+			.servicesBenefitsTeamGray > div > div > h3 {color: #a7a7a7;}
+			.servicesBenefitsTeam > div > h3, .servicesBenefitsTeam > div > p {
+				width: 60%;
+				margin: 15px auto;
+			}
+			.servicesBenefitsTeam > div > div {overflow: visible;}
+			.servicesBenefitsTeam > div > .services {
+				background: url("https://www.healthlinx.com/wp-content/themes/healthlinx/images/thumbsUpBG.png");
+				background-size: 80% auto;
+				background-repeat: no-repeat;
+				background-position: 50% 0%;
+			}
+			.servicesBenefitsTeam > div > .benefits {
+				background: url("https://www.healthlinx.com/wp-content/themes/healthlinx/images/smileBG.png");
+				background-size: 80% auto;
+				background-repeat: no-repeat;
+				background-position: 50% 0%;
+			}
+			.servicesBenefitsTeam > div > .team {
+				background: url("https://www.healthlinx.com/wp-content/themes/healthlinx/images/teamBG.png");
+				background-size: 80% auto;
+				background-repeat: no-repeat;
+				background-position: 50% 0%;
+			}
+			.servicesBenefitsTeam > div > div > ul > li {
+				font-weight: bold;
+				font-size: 0.9em;
+				margin: 5% 0;
+			}
+			
+		/* About */
+			.aboutLeft img {
+				width: 50%;
+				margin: 20% auto 0;
+			}
+			.aboutMission {
+				background: url("https://www.healthlinx.com/wp-content/themes/healthlinx/images/aboutMissionBG.jpg");
+				background-size: auto 100%;
+				background-repeat: no-repeat;
+				background-position: top right;
+			}
+			.aboutMission > .widthRestriction {
+				margin: 0 auto;	
+				padding: 3% 0;
+			}
+			.aboutMission > .widthRestriction > div {padding: 0 0 0 5%;}
+			.aboutMission > .widthRestriction > div > ul > li {margin: 30px 0;}
+			.aboutUs > div > div > a > img {width: 95%;}
+			.aboutUs > div > div > div {
+				width: 60%;
+				margin: 0 auto;	
+				font-size: 0.9em;
+			}
+			.aboutUs > div > div > div > strong, .aboutUs > div > div > div > p > strong {font-size: 1.25em;}
+			
+	
+		/* Careers */
+			.careers > h2 {margin: 5% 0 0 5%;}
+			.careers > div > a {text-decoration: none;}
+			.careers > div > p {
+				width: 90%;
+				margin: 15px auto !important;	
+			}
+			.jobPost > div > div > h3 > a:link , .jobPost > div > div > h3 > a:visited {font-size: 1.25em;}
+			
+		/* Category */
+			.categoryPage {padding: 0 5%;}
+			.categoryPage > li.cat-item, .widthRestriction > .page_item {
+				list-style-type: none;
+				display: inline-block;
+				vertical-align: top;
+				text-align: center;
+				width: 31%;
+				margin: 1%;
+				font-size: 0.9em;
+			}
+			.categoryPage > li.cat-item > a:link, .categoryPage > li.cat-item > a:link, .widthRestriction > .page_item > a:link, .widthRestriction > .page_item > a:visited  {
+				display: block;
+				width: 94%;
+				padding: 3%;
+				background-color: #eaeaea;
+				color: #797a7d;
+			}
+			.categoryPage > li.cat-item > a:hover, .widthRestriction > .page_item > a:hover {
+				color: #fff;
+				background-color: #797a7d;	
+			}
+			.page_item > .children {display: none;}
+		
+		/* Our Team */
+			.ourTeamActive {
+				border-bottom: 5px solid #FF9900 !important;
+				color: #FF9900 !important;
+			}
+			.ourTeamUL {
+				display: block;
+				width: 100%;
+				padding: 0;
+				margin: 0;
+			}
+			.ourTeamUL li {
+				display: inline-block;
+				list-style-type: none;
+				text-align: center;
+				font-weight: bold;
+				width: 20%;	
+				padding: 1% 0;
+				color: #fff;
+				border-bottom: 5px solid #fff;
+			}
+			.ourTeamUL li:hover {
+				border-bottom: 5px solid #FF9900;
+				cursor: pointer;
+				color: #FF9900;
+			}
+			.ourTeam > .widthRestriction > div > *, .ourTeam > .widthRestriction > div > div > * {
+				margin: 0;
+				text-align: center;	
+			} 
+			.ourTeamEmail, .ourTeamJobTitle  {font-size: 0.85em;}
+			.ourTeamEmail:hover {color: #232323 !important;}
+			.ourTeam > .widthRestriction > div img {
+				width: 90%;
+				margin: 0 auto 10px;
+				border-radius: 50%;	
+					-moz-border-radius: 50%;	
+					-webkit-border-radius: 50%;
+				border: 5px solid #797A7D;
+			}
+			.linkedinLogo, .hoverInfoButton {
+				display: none;	
+				position: absolute;
+				top: 46%;
+				right: 35%;
+				width: 32px;
+				height: 32px;
+			}
+			.hoverInfoButton {left: 35%;}
+			.linkedinLogo img, .hoverInfoButton img {
+				width: 32px !important;
+				height: 32px;
+				border: none !important;
+				background-color: #fff;
+			}
+			.linkedinLogo img:hover, .hoverInfoButton img:hover {
+				cursor: pointer;
+				opacity: 0.7;
+			}
+			.quarterWidthOurTeam p:nth-child(3),.quarterWidthOurTeam p:nth-child(4), .quarterWidthOurTeam p:nth-child(5), .quarterWidthOurTeam p:nth-child(6), .quarterWidthOurTeam p:nth-child(7), .quarterWidthOurTeam p:nth-child(8), .quarterWidthOurTeam p:nth-child(9), .quarterWidthOurTeam p:nth-child(10), .quarterWidthOurTeam p:nth-child(11), .quarterWidthOurTeam p:nth-child(12), .quarterWidthOurTeam p:nth-child(13), .quarterWidthOurTeam p:nth-child(14), .quarterWidthOurTeam p:nth-child(15), .quarterWidthOurTeam p:nth-child(16),  .quarterWidthOurTeam p:nth-child(17),  .quarterWidthOurTeam p:nth-child(18),  .quarterWidthOurTeam p:nth-child(19),  .quarterWidthOurTeam p:nth-child(20),  .quarterWidthOurTeam > ul, .quarterWidthOurTeam > ul > p, .innerModal > .halfWidth > ul  {display: none;}
+			.ourTeamModal {
+				display: none;
+				width: 60%;
+					max-width: 900px;
+				position: fixed;
+				margin: 0 auto !important;
+				background-color: #eaeaea;
+				top: 10%;
+				left: 0;
+				right: 0;
+				z-index: 100001;
+				box-shadow: 0px 0px 25px #232323;
+			}
+			.ourTeamModal:hover {display: block;}
+			.modalText {
+				display: inline-block;
+				vertical-align: top;
+				height: 420px;
+				overflow-y: scroll;
+			}
+			.modalText > * {
+				margin: 0;
+				padding: 0;	
+			}
+			.modalButton {
+				text-decoration: none;	
+				text-align: center;
+				display: block;
+				cursor: pointer;
+				color: #fff;
+				background-color: rgba(255,153,0,0.6);
+				font-size: 1.25em;
+				width: 95%;
+				padding: 2% 0;
+			}
+			.fullWidth > .modalButton {
+				background-color: rgba(167,167,167,0.6);
+				width: 100%;
+				padding: 0;
+			}
+			.fullWidth > .modalButton a:link, .fullWidth > .modalButton a:visited {
+				display: block;
+				text-decoration: none;	
+				text-align: right;
+				font-size: 0.75em;
+				width: 100%;
+				background-color: rgba(167,167,167,0.6);
+				color: #fff;
+				width: 96%;
+				padding: 2% 2%;
+				margin: 15px 0 0 0;	
+			}
+			.fullWidth > .modalButton a:hover {background-color: rgba(255,153,0,0.9);}
+			.modalText h3, .modalText p {display: none;}
+			.modalText .contactInfo {display: none !important;}
+			.modalText p, .modalText ul, .modalText ul li {
+				text-align: left;
+				font-size: 0.9em;	
+				margin: 15px 0;
+			}
+			.modalText p {width: 95%;}
+			.modalText ul li {
+				margin: 0 auto;
+				width: 80%;
+			}
+			.innerModal {display: block;}
+			.innerModal > img {
+				vertical-align: top;
+				display: block;	
+				width: 70%;
+			}
+			.innerModal > div > h3 {margin: 15px 0 0 0;}
+			.innerModal > div > p {margin: 0;}
+			.modalTitleWrapper {position: relative;}
+			.modalTitleWrapper > img {
+				position: absolute;
+				width: 20px !important;
+				height: 20px;
+				top: 5px;
+				right: 5px;	
+				border: none !important;
+			}
+			.modalTitleWrapper > a:link, .modalTitleWrapper > a:visited {
+				display: block;
+				text-decoration: none;
+				text-align: left;
+				width: 94%;
+				padding: 2% 3%;
+				margin: 0 0 20px;
+				font-size: 1.75em;
+				background-color: #797A7D;	
+				color: #fff;
+			}
+			.modalTitleWrapper > a:hover {background-color: #232323;}
+			.hoverIcons {position: relative;}
+			.contactInfo h3, .contactInfo p {margin: 0;}
+			
+			/* Search Results Page */
+			.searchResultsWrapper {
+				display: inline-block;
+				width: 76%;
+				margin: 0.5%;	
+			}
+			.searchResultsWrapper a:link, .searchResultsWrapper a:visited {
+				color: #232323;	
+				font-size: 0.95em;	
+			}
+			.searchResultsWrapper a:hover {
+				text-decoration: none;
+				background-color: #232323;
+				color: #fff;
+			}
+			.searchResultsWrapper > .page-title > span {color: #a7a7a7;}
+			.search-form label {vertical-align: top;}
+			.search-form label input {
+				width: 80%;
+				margin: 0 0 0 3%;
+			}
+			.search-submit {
+				height: 12px;
+				width: 12px;
+				padding: 5px;
+				background-color: #f90;	
+			}
+			.search-submit:hover {background-color: #232323;}
+			/* RSS Feed */
+			.feeds {
+				margin: 15px auto;
+				width: 100%;
+				padding: 0;
+			}
+			.feeds li {
+				list-style-type: none;
+				display: inline-block;
+				vertical-align: top;
+				
+			}
+			.feeds li:nth-child(1) {width: 20%;}
+			.feeds li:nth-child(2) {width: 80%;}
+			.feeds li img {width: 80%;}
+			.feeds li a:link, .feeds li a:visited {
+				display: block;
+				list-style-type: none;	
+				text-decoration: none;
+				width: 80%;
+				padding: 10px 10%;
+				border: 1px solid #eaeaea;
+				color: #535353;
+				font-size: 0.8em;
+				text-align: center;
+			}
+			.feeds li a:hover {
+				text-decoration: none;
+				background-color: #232323;	
+				color: #fff;
+			}
+			/* Job Seekers */
+			.jobSeekersFormWrapper ~ .thirdWidth {
+				width: calc(100%/3);
+					-webkit-width: calc(100%/3);
+					-moz-width: calc(100%/3);
+				margin: 0;
+			}
+			.jobSeekersFormWrapper > h1 {
+				text-align: center;
+				padding: 0;
+				margin: 10px 0 5px;
+				color: #F90;
+			}
+			.jobSeekersFormWrapper > span {
+				display: block;
+				text-align: center;	
+				font-size: 0.85em;
+			}
+			form[name=siteloklogin] {
+				margin: 3% 0 1%;
+				color: #232323;
+			}
+			.jsUL {line-height: 1.5em;}
+			.jsUL li {margin: 10px 0;}
+			.jobSeekersFormWrapper {
+				padding: 10px 5%;
+				background-color: rgba(254,215,171,0.6);
+			}
+			.jobSeekersFormWrapper > .widthRestriction {margin: 0 auto;}
+			.jobSeekersFormWrapper > .widthRestriction > span {
+				display: block;
+				width: 100%;
+				text-align: center;	
+			}
+			.jsEmail, .jsPassword {
+				display: inline-block;
+				width: 40%;
+			}
+			.jsEmail input, .jsPassword input {
+				width: 95%;
+				padding: 5px 1%;
+				margin: 0 1%;
+				border: none;
+			}
+			.jobSeekersFormWrapper > form > input[name="login"] {
+				width: 20% !important;
+				padding: 5px 1%;
+				background-color: #F90;
+				color: #fff;
+			}
+			.jobSeekersFormWrapper > form > input[name="login"]:hover {
+				background-color: #232323;
+				color: #fff;	
+			}
+			.forgotPassword {
+				text-align: right;
+				margin: 0 0 10px;
+			}
+			.forgotPassword a:link, .forgotPassword a:visited {
+				font-size: 0.85em;
+				color: #232323;
+			}
+			.forgotPassword a:hover {color: #F90;}
+			.availableJobs a:link, .availableJobs a:visited, .leaderProfile a:link, .leaderProfile a:visited, .createLeaderProfile a:link, .createLeaderProfile a:visited {
+				display: block;
+				text-align: center;
+				text-decoration: none;
+				font-size: 0.9em;
+				width: 100%;
+				background-color: rgba(254,215,171,0.2);
+				/* background-color: rgba(254,215,171,0.6); */
+				color: #232323;
+				padding: 15px 0;
+			}
+			.availableJobs a:hover, .leaderProfile a:hover, .createLeaderProfile a:hover {
+				background-color: rgba(254,215,171,0.6);
+				text-decoration: underline;
+			}
+	
+/** *****************************************
+Footer
+***************************************** **/
+	footer {
+		max-width: none;
+		background: url("http://solutions.healthlinx.com/cdnr/34/acton/attachment/4436/f-01ec/1/-/-/-/-/Footer%20Background.jpg");
+		color: #fff;
+	}
+	footer .outerThirdWidth {
+		margin: 0 auto;
+		width: 90%;
+		padding: 15px 0;
+	}
+	footer .outerThirdWidth .fullWidth {
+		margin: 0;
+		padding: 15px 0;	
+	}
+	.footerTitle {
+		display: block;
+		color: #232323;
+		font-weight: bold;
+		font-size: 1.5em;
+		margin: 0 auto;
+	}
+	/* Footer, city */
+	.footerSecondaryTitle {
+		display: block;
+		font-weight: bold;
+		color: #232323;
+	}
+	.footerAddress a:link, .footerAddress a:visited {
+		display: block;
+		color: #232323;
+		margin: 5%;
+	}
+	.footerAddress a:hover {color: #FF9900;}
+	/* Footer-specific menu styling */
+	.footerFirstColumn ul li a:link, .footerFirstColumn ul li a:visited, .footerSecondColumn ul li a:link, .footerSecondColumn ul li a:visited {
+		color: #fff;
+		text-decoration: none;
+	}
+	.footerSecondColumn ul, .footerFirstColumn ul {
+		display: block;
+		padding: 0;
+	}
+	.footerSecondColumn ul li, .footerFirstColumn ul li {
+		display: block;
+		text-align: left;
+		max-width: 100%;
+	}
+	.footerThirdColumn p {
+		margin: 5px 0;
+	}
+	.footerThirdColumn input {
+		width: 75%;
+		padding: 5px;
+		border: 2px solid #727474;
+	}
+	footer .formField > input {width: 100%;}
+	.ao_tbl_container > tbody > tr > td.ao_tbl_cell {padding: 0 !important;} 
+	.ao_tbl_container > tbody > tr > td > input {
+		padding: 5px 0;
+		width: 100%;
+		float: right;
+	}
+	.footerThirdColumn button[type=submit] {
+		width: 20%;
+		font-size: 0.7em;
+		font-weight: bold;
+		margin: 0;
+		letter-spacing: 0;	
+	}
+	#menu-footer-navigation li:nth-child(4) {margin: 15px 0;}
+	#menu-second-column-footer li .sub-menu li, #menu-footer-navigation li .sub-menu li {margin: 0 0 0 10%;}
+	.socialIconDiv {margin: 0 0 15px 0;}
+	.socialMediaIcon {
+		width: 30px;
+		height: auto;
+		display: inline-block;
+		margin: 1px;
+	}
+	.socialMediaIcon:hover {
+		opacity: 0.3;
+		filter:Alpha(opacity=30); /* support for pre-IE8 */
+	}
+	.footerIconBorder {
+		border-radius: 50%;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+		transition: 0.25s ease-in-out;
+			-webkit-transition: 0.25s ease-in-out;
+			-moz-transition: 0.25s ease-in-out;
+			-o-transition: 0.25s ease-in-out;
+	}
+	.copyright {margin: 25px 0 0 0 !important;}
+	#footerToTop, #footerToTop img {
+		outline: none;
+		border: none;
+		position: fixed;
+		width: 25px;
+		height: 25px;
+		right: 30px;
+		bottom: 30px;
+	}
+	#footerToTop:hover {cursor: pointer;}
+	.mobileFooterLinks {
+		display: none;	
+		text-align: center;
+		padding: 5% 0;
+	}
+	.mobileFooterLinks li {
+		list-style-type: none;
+		display: block;
+		margin: 5px 0;
+	}
+	.mobileFooterLinks li a:link, .mobileFooterLinks li a:visited {
+		color: #fff;
+		text-decoration: none;
+		font-size: 0.9em;
+	}
+	
+/** *****************************************
+Media Queries
+***************************************** **/
+	@media only screen and (max-width: 1350px) {
+		.LEcontactUs > div > img {
+			width: auto;
+				max-width: 832px;
+			height: 87%;
+		}
+	}
+	@media only screen and (min-width: 1250px) {
+		header {margin-top: 76px;}
+	}
+	@media only screen and (min-width: 1100px) {
+		.jobSeekersLogin, .teamMemberButton {margin-top: 50px;}
+		.footer > div > .fullWidth {padding: 10px 0;}
+	}
+	@media only screen and (max-width: 1099px) {
+		.LEhomeContent span {padding: 4% 0;}
+		.LEcontactText > form {margin: 5% 0;}
+		.LEcontactUs > div > img {height: 90%;}
+		.footer > div > .fullWidth {padding: 2% 0px 5%;}
+		.footer .outerThirdWidth {padding: 15px 5%;}
+		.sixthWidth {
+			width: 23%;
+			margin: 1%;	
+		}
+		.linkedinLogo, .hoverInfoButton {
+			display: inline-block;	
+			position: relative;
+			top: 0;
+			right: 0;
+			left: 0;
+		}
+		.linkedinLogo img, .hoverInfoButton img {
+			width: 25px !important;
+			height: 25px;
+			border: none !important;
+			background-color: #fff;
+		}
+	}
+	@media only screen and (max-width: 865px) {
+		.jobSeekersLogin {margin-top: 2.75%;}
+		.resourcesPost {width: 45%;}
+		.resourcesPost > .resourcesTextWrapper {
+			width: 74%;
+			padding: 2% 3%;	
+		}
+		.arrowWrapper img {
+			width: 200%;
+			max-width: 200%;	
+		}
+		.lePageServices > .quarterWidth {
+			width: 42%;
+			height: 31%;
+			padding: 1% 3%;
+			margin: 1%	
+		}
+		.sixthWidth, .quarterWIdth {
+			width: 31%;
+			margin: 1.3% 1%;	
+		}
+	}
+	@media only screen and (max-width: 780px) {
+		.jobSeekersLogin {
+			width: 100%;
+			text-align: center;
+			margin-top: 0;
+			top: 0;
+		}
+		.jobSeekersLogin p {margin: 0;}
+		.jobSeekersLogin p a:link {margin: 0;}
+		.jsLoginWindow {
+			top: 44px;
+			width: 90%;
+			padding: 5% 5%;
+		}
+		.menu-item a:link, .menu-iteme a:visited {font-size: 0.75em;}
+		.menu-navigation-container {margin-top: 6%;}
+		.navImage {margin: 6% auto 0;}
+		#mNav img {margin-top: 100%;}
+		.testimonialQuote {
+			display: block;
+			width: 95%;
+			margin: 0 auto;
+		}
+		.testimonialPhoto {
+			width: 85%;
+			max-width: 200px;
+			display: block;
+			vertical-align: top;
+			margin: 15px auto;
+		}
+		.termsPrivacyWrapper {width: 85%;}
+		.halfWidthRevised {
+			display: block;
+			width: 90%;
+			margin: 8% auto;	
+		}
+		.halfWidthRevised > p > a > img {display: block;}
+		.neButtonsWrapper, .neButtons {display: none;}
+		.neMobileButtons {
+			display: block;
+			width: 90%;
+			margin: 0 auto 5%;
+			float: none;
+			text-align: center;
+		}
+		.quarterWidth.magnetP2Eheader {
+			display: block;
+			width: 90%;
+			margin: 5% auto 2%;	
+		}
+		.halfWidth.magnetP2Eheader {
+			display: block;
+			width: 90%;
+			margin: 0 auto;
+		}
+		.quarterWidth.magnetP2Eheader h1, .halfWidth.magnetP2Eheader h1 {text-align: center;}
+		.LEcontactUs > div > img {max-width: 220%;}
+		.jsEmail, .jsPassword {width: 50%;}
+		.jsEmail input, .jsPassword input {
+			display: block;
+			margin: 0 auto;
+		}
+		form[name="siteloklogin"] > input[type="submit"] {
+			float: none;
+			width: 98% !important;
+			margin: 15px auto;
+			padding: 5px 0;
+		}
+	}
+	@media only screen and (max-width: 700px) {
+		.resourcesContactWrapper {background-size: auto 100%;}
+		.blogContent {
+			display: block;
+			width: 98%;	
+		}
+		#twitter-widget-0, .twitter-timeline {display: none !important;}
+		.sidebarWrapper {
+			display: none;
+			position: absolute;
+			top: 50px;
+			right: 0;
+			width: 75%;
+			background-color: #fff;	
+			box-shadow: -5px 5px 5px -2px #A1A1A1;
+			margin: 3% 0 0 0;
+		}
+		.sidebarWrapper p {
+			width: 90%;
+			margin: 15px auto;	
+		}
+		.sidebarMobileTab {
+			display: block;
+			position: absolute;
+			border: none;
+			z-index: 1;
+			right: 0;
+			font-size: 0.9em;
+			padding: 5px 10px;
+			margin: 5% 0 0 0;
+			color: #fff;
+			background-color: #BDDB8B;
+		}
+		.sidebarMobileTab:hover {cursor: pointer}
+		.sidebarWrapper > form > div > table > tbody> tr > td > div > div > div > table > tbody > tr > td > label {display: initial;}
+		.sidebarWrapper h3 {text-align: center;}
+		.sidebarWrapper > p > img {
+			width: 50%;
+			margin: 0 auto;
+		}
+		.hideSidebar {display: block;}
+		.ourTeamModal {
+			width: 90%;
+			top: 5%;
+		}
+		.ourTeamModal > .innerModal > .halfWidth {
+			display: block;	
+			margin: 0 auto;
+			width: 95%;
+		}
+		.ourTeamModal > .innerModal > .halfWidth > img {width: 40%;}
+		.ourTeamModal > .innerModal > .halfWidth > .modalText {
+			height: 100px;
+			width: 95%;
+		}
+	}
+	@media only screen and (max-width: 675px) {
+		.NEservices, .LEservices {
+			width: 100%;	
+			height: auto !important;
+		}
+		.NEhomeContent, .LEhomeContent {
+			float: none;
+			display: block;
+			width: 90%;
+				max-width: 100%;
+			margin: 10% auto;	
+		}
+		.LEhomeContent span {margin: 0;}
+		.mServiceButton {
+			display: block !important;
+			width: 90%;
+		}
+		.buttons {display: none;}
+		.arrowWrapper img {
+			width: 250%;
+			max-width: 250%;	
+		}
+		.NEcontactUs > .arrowWrapper {height: 85%;}
+		.NEcontactUs > .arrowWrapper > img {
+			max-width: 240%;
+			width: 240%;	
+		}
+		.aboutLeft img {display: none;}
+		.aboutRight {width: 80%;}
+		.aboutRight p {font-size: 0.8em}
+		.servicesBenefitsTeam > .widthRestriction > .thirdWidth {
+			width: 90%;
+			margin: 2% 5%;
+		}
+		.servicesBenefitsTeam > div > .services, .servicesBenefitsTeam > div > .benefits, .servicesBenefitsTeam > div > .team {background-size: 60% auto;}
+		.LEcontactUs {
+			padding: 15px 0;	
+		}
+		.LEcontactUs > div {
+			width: 100% !important;
+			display: block !important;
+		}
+		.LEcontactUs > div > img, .NEcontactUs > .arrowWrapper, .arrowWrapper img {
+			display: none;
+			height: 0;
+		}
+		.quarterWidthOurTeam.quarterWidth {width: 48%;}
+		.searchResultsWrapper {
+			display: block;
+			width: 95%;
+			margin: 0 auto;
+		}
+	}
+	@media only screen and (max-width: 595px) {
+		.threeQuartersWidth {
+			width: 95%;
+		}
+		.menu-item {
+			display: block !important;
+			max-width: none;
+		}
+		#menu-navigation {display: none;}
+		.menu-navigation-container  {
+			float: none;
+			width: 100%;
+			margin: 0 auto;
+		}
+		.navImage {
+			float: none;
+			padding: 1%;
+			display: block;
+		}
+		.navImage {width: 100px !important;}
+		#menu-navigation li {
+			width: 100%;
+			text-align: center;
+		}
+		#mNav {
+			display: block;
+			float: right;
+			right: 10px;
+			top: 10px;
+			border: none;
+			background: none;
+			position: absolute;
+		}
+		#mNav img {
+			width: 25px;
+			height: auto;
+		}
+		.aboutUs > div {
+			display: block;
+			width: 96%;
+			margin: 0 auto;
+		}
+		.aboutUs > div  > .halfWidth {width: 100%;}
+		.aboutUs > div > div > div {
+			width: 100%;
+			margin: 5% auto;
+			text-align: center;
+		}
+		.aboutMission > div > .halfWidth {
+			display: block;
+			width: 90%;
+			margin: 5% auto;
+			padding: 0;
+		}
+		.formFieldLabel, .formFieldLabel label {text-align: center;}
+		.sub-menu {display: block;}
+		.footerFirstColumn, .footerSecondColumn {display: none;}
+		.footerThirdColumn {
+			width: 100%;
+			margin: 5% auto;
+			text-align: center;
+		}
+		.mobileFooterLinks {display: block;}
+		.magP2EbelowHeader .threeQuartersWidth {margin: 5% auto;}
+		.magP2EbelowHeader .threeQuartersWidth, .magP2EbelowHeader .quarterWidth  {
+			display: block;
+			width: 100%;	
+		}
+		.magP2EbelowHeader .quarterWidth h2 {margin: 0;}
+		.ourTeamUL li {
+			width: 100%;
+			padding: 3% 0;
+		}
+		
+	}
+	@media only screen and (max-width: 500px) {
+		.outerThirdWidth {padding: 0 !important;}
+		.thirdWidth {width: 95%;}
+		.contactFormWrapper {
+			width: 100%;
+			margin: 0 auto;	
+		}
+		.LEcontactText {width: 90%;}
+		.lePageServices > .quarterWidth {
+			width: 94%;
+			height: auto;
+			margin: 2% auto;	
+		}
+		.comparisonTableWrapper {padding: 5% 0;}
+		.leComparisonTable {
+			padding: 0 2%;
+			width: 96%;
+		}
+		.leComparisonTable tr:first-child td h1 {
+			font-size: 1.25em;
+			font-weight: bold;
+		}
+		.leComparisonTable tr:first-child td {font-size: 0.7em;}
+		.LEchartTitles {font-size: 0.7em;}
+		.LEavgVacancy .thirdWidth {
+			display: block;
+			width: 90%;
+			margin: 5% auto;	
+		}
+		.insideHeaderDiv > .halfWidth {width: 100%;}
+		.halfWidthRevised {margin: 15% auto;}
+		.halfWidthRevised > .halfWidth {
+			width: 90%;
+			margin: 8% auto;	
+			display: block;
+		}
+		.viewMoreButton {width: 100%;}
+		.resourcesContactWrapper > div > div {
+			width: 95%;
+			margin: 0 auto;	
+		}
+		.resourcesContactWrapper > div > div > h3 {text-align: center;}
+		.resourcesContactWrapper div div p {width: 100%;}
+		.quarterWidthOurTeam {margin: 5% 0.5%;}
+		.jobSeekersFormWrapper ~ .thirdWidth {
+			width: 100%;
+			display: block;	
+		}
+		.jsEmail, .jsPassword {
+			display: block;
+			width: 100%;
+			margin: 10px 0;	
+		}
+	}
+	@media only screen and (max-width: 410px) {
+		p {font-size: 0.85em;}
+		h1 {font-size: 1.25em;}
+		h4 {font-size: 0.85em;}
+		.navImage{margin-top: 10%;}
+		.menu-item {padding: 3% 2%;}
+		.menu-item > a:link {font-size: 1.25em;}
+		.halfWidthBlogPost {width: 100%;}
+		.blogPageButton {
+			display: block;
+			width: 95%;
+			margin: 0 auto;
+		}
+		.cat-item {
+			display: block;
+			width: 90%;
+			margin: 5px auto;	
+		}
+		.quarterWidth.magnetP2Eheader, .halfWidth.magnetP2Eheader {width: 95%;}
+		.servicesBenefitsTeam > div > h3, .servicesBenefitsTeam > div > p {width: 75%;}
+		.quarterWidthOurTeam.quarterWidth {
+			width: 90%;
+			margin: 5%;
+		}
+		.searchResultsWrapper .quarterWidth {width: 48%;}
+	}
+	@media only screen and (max-width: 300px) {
+		.quarterWidthOurTeam.quarterWidth {
+			width: 90%;
+			margin: 5%;
+		}
+		.searchResultsWrapper .quarterWidth {
+			width: 90%;
+			margin: 0 auto;
+		}
+	}
+	.noMargin {margin: 0;}
